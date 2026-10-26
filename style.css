@@ -1771,3 +1771,400 @@ button:focus-visible {
     animation: none;
   }
 }
+
+
+
+/* ==========================================
+   PSYCHOLOGIST PROFILE
+========================================== */
+
+.psychologist-profile {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(30px, 5vw, 75px);
+  align-items: center;
+
+  margin-top: 90px;
+  padding: clamp(24px, 4vw, 54px);
+
+  background: #f5efe8;
+  border: 1px solid rgba(140, 117, 155, .14);
+  border-radius: 30px;
+}
+
+.psychologist-profile__photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 510px;
+  height: 100%;
+
+  background: linear-gradient(
+    150deg,
+    #e8e0f0 0%,
+    #d4c6df 55%,
+    #b9a9c8 100%
+  );
+
+  border-radius: 220px 220px 22px 22px;
+}
+
+.psychologist-profile__placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  color: #776285;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+.psychologist-profile__flower {
+  font-size: clamp(90px, 12vw, 170px);
+  font-weight: 400;
+  line-height: 1;
+  opacity: .35;
+}
+
+.psychologist-profile__content {
+  min-width: 0;
+}
+
+.psychologist-profile__eyebrow {
+  display: block;
+  margin-bottom: 18px;
+
+  color: #8c759b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.psychologist-profile__name {
+  margin: 0 0 12px;
+
+  color: #4a403c;
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.045em;
+}
+
+.psychologist-profile__position {
+  color: #8c759b;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.psychologist-profile__intro {
+  max-width: 520px;
+  margin-top: 26px;
+
+  color: #776c69;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.psychologist-profile__facts {
+  margin: 30px 0;
+  border-top: 1px solid rgba(74, 64, 60, .12);
+}
+
+.psychologist-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(74, 64, 60, .12);
+}
+
+.psychologist-fact__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 13px;
+  background: #e8e0f0;
+
+  color: #8c759b;
+  font-size: 22px;
+}
+
+.psychologist-fact strong {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #4a403c;
+  font-size: 14px;
+}
+
+.psychologist-fact p {
+  max-width: 440px;
+  margin: 0;
+
+  color: #817671;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.psychologist-profile__actions {
+  margin-top: 24px;
+}
+
+
+/* ==========================================
+   CONTACT PHONE
+========================================== */
+
+.contact-direct {
+  position: relative;
+  z-index: 2;
+  margin-top: 32px;
+}
+
+.contact-direct__label {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #817671;
+  font-size: 12px;
+}
+
+.contact-direct__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  max-width: 100%;
+  padding: 16px 19px;
+
+  border: 1px solid rgba(140,117,155,.23);
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
+
+  color: #4a403c;
+  text-decoration: none;
+
+  transition:
+    border-color .3s ease,
+    background .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.contact-direct__phone:hover {
+  transform: translateY(-3px);
+  border-color: #c9bad9;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(74,64,60,.07);
+}
+
+.contact-direct__icon {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+  background: #e8e0f0;
+
+  color: #8c759b;
+  font-size: 23px;
+}
+
+.contact-direct__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-direct__text small {
+  color: #817671;
+  font-size: 11px;
+}
+
+.contact-direct__text strong {
+  color: #4a403c;
+  font-size: clamp(13px, 1.5vw, 17px);
+  font-weight: 700;
+}
+
+.contact-direct__arrow {
+  margin-left: 12px;
+  color: #8c759b;
+  font-size: 19px;
+}
+
+.site-footer__phone {
+  display: inline-block;
+  margin-top: 13px;
+
+  color: #e4d0ec;
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.site-footer__phone:hover {
+  color: #fff;
+}
+
+
+/* ==========================================
+   ADAPTIVE
+========================================== */
+
+@media (max-width: 1000px) {
+  .psychologist-profile {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 30px;
+  }
+
+  .psychologist-profile__photo {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  .psychologist-profile {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+    padding: 22px;
+  }
+
+  .psychologist-profile__photo {
+    height: 370px;
+    min-height: 0;
+  }
+
+  .psychologist-profile__intro {
+    margin-top: 18px;
+  }
+
+  .psychologist-profile__facts {
+    margin: 22px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .psychologist-profile {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .psychologist-profile__photo {
+    height: 320px;
+  }
+
+  .psychologist-profile__name {
+    font-size: 30px;
+  }
+
+  .contact-direct__phone {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .contact-direct__icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-direct__arrow {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-direct__phone {
+    transition: none;
+  }
+}
+
+
+
+/* ФОТО ПСИХОЛОГА */
+
+.psychologist-profile__photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 510px;
+  height: 100%;
+
+  border-radius: 220px 220px 22px 22px;
+  background: #e8e0f0;
+  isolation: isolate;
+}
+
+.psychologist-profile__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 510px;
+
+  object-fit: cover;
+  object-position: center 40%;
+
+  transition: transform .8s ease;
+}
+
+.psychologist-profile__photo:hover .psychologist-profile__image {
+  transform: scale(1.035);
+}
+
+.psychologist-profile__photo-accent {
+  position: absolute;
+  right: 18px;
+  bottom: 15px;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  background: rgba(251, 247, 242, .92);
+  color: #8c759b;
+  font-size: 29px;
+
+  box-shadow: 0 8px 25px rgba(74, 64, 60, .08);
+}
+
+@media (max-width: 760px) {
+  .psychologist-profile__photo,
+  .psychologist-profile__image {
+    height: 370px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .psychologist-profile__photo,
+  .psychologist-profile__image {
+    height: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .psychologist-profile__image {
+    transition: none;
+  }
+}

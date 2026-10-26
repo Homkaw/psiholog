@@ -29,6 +29,15 @@ FORMATS = {
 }
 
 
+@app.get("/images/<path:filename>")
+def serve_images(filename):
+    return send_from_directory(
+        os.path.join(BASE_DIR, "images"),
+        filename
+    )
+
+
+
 # =========================================
 # СТРАНИЦЫ
 # =========================================
