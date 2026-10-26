@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Психолог | Пространство поддержки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+  <div class="page-bg"></div>
+
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="logo">Точка опоры</a>
+
+      <nav class="nav">
+        <a href="#about">О специалисте</a>
+        <a href="#help">С чем работаю</a>
+        <a href="#steps">Как проходит работа</a>
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a href="#appointment" class="btn btn--small">Записаться</a>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">О специалисте</a>
+      <a href="#help">С чем работаю</a>
+      <a href="#steps">Как проходит работа</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#appointment" class="btn btn--mobile">Записаться</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <span class="hero__label">Бережная психологическая поддержка</span>
+          <h1>Здесь можно <br>быть собой</h1>
+          <p class="hero__text">
+            Пространство, где вас слышат, принимают и помогают мягко пройти путь
+            к устойчивости, ясности и внутренней опоре.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#appointment" class="btn">Записаться на консультацию</a>
+            <a href="#about" class="btn btn--ghost">Узнать больше</a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="meta-card">
+              <strong>Онлайн / офлайн</strong>
+              <span>Удобный формат встреч</span>
+            </div>
+            <div class="meta-card">
+              <strong>50–60 минут</strong>
+              <span>Длительность сессии</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+            <div class="scene-shell">
+
+                <div class="scene-shell__top">
+                <span class="scene-status">
+                    <span class="scene-status__dot"></span>
+                    Интерактивное пространство
+                </span>
+
+                <button
+                    class="scene-reset"
+                    id="resetCamera"
+                    type="button"
+                    aria-label="Вернуть камеру"
+                >
+                    ↺
+                </button>
+                </div>
+
+                <div
+                id="therapyScene"
+                class="therapy-scene"
+                aria-label="Интерактивная 3D-комната психолога"
+                ></div>
+
+                <div id="sceneHint" class="scene-hint">
+                Выберите предмет, чтобы узнать больше
+                </div>
+
+                <div class="scene-shell__bottom">
+                <span>✧ Ваше пространство спокойствия</span>
+
+                <button
+                    type="button"
+                    id="toggleAtmosphere"
+                    class="atmosphere-btn"
+                >
+                    ☾ Вечер
+                </button>
+                </div>
+
+            </div>
+            </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="premium-about" id="about">
+    <div class="container">
+        <div class="about-layout">
+
+        <div class="about-visual">
+            <div class="about-visual__circle"></div>
+            <div class="about-visual__arch">
+            <div class="about-visual__symbol">✳</div>
+            <span>Пространство для себя</span>
+            </div>
+            <div class="about-visual__note">
+            <span>01 / Знакомство</span>
+            <p>Каждая история заслуживает внимания.</p>
+            </div>
+        </div>
+
+        <div class="about-description">
+            <span class="eyebrow">01 — О специалисте</span>
+
+            <h2 class="display-title">
+            Иногда достаточно
+            <em>быть услышанным.</em>
+            </h2>
+
+            <p class="section-lead">
+            Психологическая работа — это пространство,
+            в котором можно исследовать свои переживания,
+            отношения и важные жизненные вопросы.
+            </p>
+
+            <div class="about-description__line"></div>
+
+            <p class="body-copy">
+            Здесь нет необходимости подбирать правильные
+            слова или заранее знать, с чего начать.
+            На первой встрече можно познакомиться,
+            обсудить запрос и понять, подходит ли вам
+            предложенный формат работы.
+            </p>
+
+            <a href="#appointment" class="premium-link">
+            Обсудить первую встречу
+            <span>↗</span>
+            </a>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- HELP -->
+    <section class="premium-section help-section" id="help">
+    <div class="container">
+
+        <div class="premium-heading">
+        <div>
+            <span class="eyebrow">02 — Направления работы</span>
+            <h2 class="display-title">
+            С чем можно
+            <em>прийти.</em>
+            </h2>
+        </div>
+
+        <p>
+            Не обязательно заранее формулировать точный
+            запрос. Иногда достаточно ощущения, что
+            хочется что-то изменить.
+        </p>
+        </div>
+
+        <div class="help-grid">
+
+        <article class="help-item">
+            <span class="help-item__number">01 /</span>
+            <div class="help-item__icon">✳</div>
+            <h3>Тревога и напряжение</h3>
+            <p>
+            Когда мысли не дают отдохнуть, а спокойствие
+            кажется чем-то далёким.
+            </p>
+            <span class="help-item__arrow">↗</span>
+        </article>
+
+        <article class="help-item">
+            <span class="help-item__number">02 /</span>
+            <div class="help-item__icon">☾</div>
+            <h3>Эмоциональное выгорание</h3>
+            <p>
+            Когда привычные дела требуют слишком много сил
+            и становится трудно восстанавливаться.
+            </p>
+            <span class="help-item__arrow">↗</span>
+        </article>
+
+        <article class="help-item">
+            <span class="help-item__number">03 /</span>
+            <div class="help-item__icon">♡</div>
+            <h3>Отношения</h3>
+            <p>
+            Когда хочется лучше понимать себя, свои
+            границы и отношения с близкими.
+            </p>
+            <span class="help-item__arrow">↗</span>
+        </article>
+
+        <article class="help-item">
+            <span class="help-item__number">04 /</span>
+            <div class="help-item__icon">✧</div>
+            <h3>Самооценка</h3>
+            <p>
+            Когда сложно замечать свои сильные стороны,
+            принимать решения или доверять себе.
+            </p>
+            <span class="help-item__arrow">↗</span>
+        </article>
+
+        <article class="help-item">
+            <span class="help-item__number">05 /</span>
+            <div class="help-item__icon">∞</div>
+            <h3>Жизненные перемены</h3>
+            <p>
+            Когда привычные ориентиры меняются и нужно
+            найти новый способ двигаться дальше.
+            </p>
+            <span class="help-item__arrow">↗</span>
+        </article>
+
+        <article class="help-item help-item--accent">
+            <span class="help-item__number">06 /</span>
+            <div class="help-item__icon">✿</div>
+            <h3>Свой запрос</h3>
+            <p>
+            Если ваша ситуация не подходит под эти
+            категории, её всё равно можно обсудить.
+            </p>
+            <a href="#appointment" class="help-item__button">
+            Написать <span>↗</span>
+            </a>
+        </article>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+    <div class="container">
+        <div class="quote-content">
+        <span class="quote-symbol">“</span>
+
+        <p>
+            Не обязательно справляться
+            со всем <em>в одиночку.</em>
+        </p>
+
+        <span class="quote-caption">
+            У каждого человека свой темп.
+        </span>
+        </div>
+    </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="premium-section process-section" id="steps">
+    <div class="container">
+
+        <div class="premium-heading">
+        <div>
+            <span class="eyebrow">03 — Процесс</span>
+            <h2 class="display-title">
+            Как всё
+            <em>происходит.</em>
+            </h2>
+        </div>
+
+        <p>
+            Первую консультацию можно воспринимать
+            как знакомство с психологом и форматом работы.
+        </p>
+        </div>
+
+        <div class="process-list">
+
+        <article class="process-item">
+            <span class="process-item__number">01</span>
+            <div>
+            <h3>Первое сообщение</h3>
+            <p>
+                Вы оставляете заявку и получаете ответ
+                для согласования времени и формата встречи.
+            </p>
+            </div>
+            <span class="process-item__symbol">↗</span>
+        </article>
+
+        <article class="process-item">
+            <span class="process-item__number">02</span>
+            <div>
+            <h3>Знакомство</h3>
+            <p>
+                На первой встрече можно рассказать о себе,
+                задать вопросы и обсудить ожидания.
+            </p>
+            </div>
+            <span class="process-item__symbol">✳</span>
+        </article>
+
+        <article class="process-item">
+            <span class="process-item__number">03</span>
+            <div>
+            <h3>Совместная работа</h3>
+            <p>
+                Вы вместе определяете цели, подходящий
+                темп и дальнейший формат консультаций.
+            </p>
+            </div>
+            <span class="process-item__symbol">✿</span>
+        </article>
+
+        <article class="process-item">
+            <span class="process-item__number">04</span>
+            <div>
+            <h3>Движение в своём темпе</h3>
+            <p>
+                В процессе работы можно возвращаться
+                к целям и обсуждать происходящие изменения.
+            </p>
+            </div>
+            <span class="process-item__symbol">∞</span>
+        </article>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="premium-section services-section" id="services">
+    <div class="container">
+
+        <div class="premium-heading">
+        <div>
+            <span class="eyebrow">04 — Форматы встреч</span>
+            <h2 class="display-title">
+            Удобный формат
+            <em>для вас.</em>
+            </h2>
+        </div>
+
+        <p>
+            Ниже представлены возможные варианты встреч.
+            Актуальные условия и стоимость уточняются
+            при записи.
+        </p>
+        </div>
+
+        <div class="premium-services">
+
+        <article class="premium-service">
+            <span class="premium-service__tag">01 / Онлайн</span>
+            <div class="premium-service__symbol">⌘</div>
+
+            <div class="premium-service__body">
+            <h3>Онлайн-консультация</h3>
+            <p>
+                Встреча по видеосвязи в удобном
+                для вас месте.
+            </p>
+            </div>
+
+            <div class="premium-service__bottom">
+            <span>Условия по запросу</span>
+            <a href="#appointment" aria-label="Запись на онлайн-консультацию">↗</a>
+            </div>
+        </article>
+
+        <article class="premium-service premium-service--lavender">
+            <span class="premium-service__tag">02 / Личная встреча</span>
+            <div class="premium-service__symbol">✳</div>
+
+            <div class="premium-service__body">
+            <h3>Очная консультация</h3>
+            <p>
+                Личная встреча в кабинете
+                при наличии очного приёма.
+            </p>
+            </div>
+
+            <div class="premium-service__bottom">
+            <span>Место и условия уточняются</span>
+            <a href="#appointment" aria-label="Запись на очную консультацию">↗</a>
+            </div>
+        </article>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="premium-section faq-section" id="faq">
+    <div class="container faq-layout">
+
+        <div>
+        <span class="eyebrow">05 — Частые вопросы</span>
+        <h2 class="display-title">
+            Возможно,
+            <em>вы хотели спросить.</em>
+        </h2>
+
+        <p class="body-copy">
+            Перед первой консультацией совершенно
+            естественно иметь вопросы.
+        </p>
+        </div>
+
+        <div class="faq-list">
+
+        <details class="faq-item">
+            <summary>
+            Что делать, если я не знаю, с чего начать?
+            <span>+</span>
+            </summary>
+            <p>
+            Можно начать с того, что беспокоит сейчас,
+            даже если пока сложно подобрать слова.
+            Сформулировать запрос можно совместно
+            на первой встрече.
+            </p>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            Обязательно ли продолжать после первой встречи?
+            <span>+</span>
+            </summary>
+            <p>
+            Нет. После знакомства вы сможете решить,
+            подходит ли вам специалист и хотите ли вы
+            продолжить работу.
+            </p>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            Как выбрать формат консультации?
+            <span>+</span>
+            </summary>
+            <p>
+            Можно обсудить доступные варианты при записи.
+            Выбор будет зависеть от ваших предпочтений
+            и возможностей специалиста.
+            </p>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            Как обеспечивается конфиденциальность?
+            <span>+</span>
+            </summary>
+            <p>
+            Условия конфиденциальности, обработки данных
+            и предусмотренные законом исключения
+            необходимо согласовать со специалистом
+            до начала работы.
+            </p>
+        </details>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- APPOINTMENT -->
+    <section class="premium-contact" id="appointment">
+    <div class="container">
+        <div class="contact-panel">
+
+        <div class="contact-info">
+            <span class="eyebrow">06 — Первый шаг</span>
+
+            <h2>
+            Можно просто
+            <em>начать с разговора.</em>
+            </h2>
+
+            <p>
+            Оставьте контактные данные, чтобы
+            согласовать первую встречу.
+            Подробности личной ситуации можно
+            обсудить непосредственно на консультации.
+            </p>
+
+            <div class="contact-decoration">✳</div>
+        </div>
+
+        <form
+            id="appointmentForm"
+            class="premium-form"
+            novalidate
+        >
+            <div class="form-top">
+            <h3>Записаться на встречу</h3>
+            <span>✿</span>
+            </div>
+
+            <div class="form-field">
+            <label for="clientName">Как к вам обращаться?</label>
+            <input
+                id="clientName"
+                name="name"
+                type="text"
+                maxlength="100"
+                autocomplete="name"
+                placeholder="Ваше имя"
+                required
+            >
+            </div>
+
+            <div class="form-field">
+            <label for="clientEmail">Электронная почта</label>
+            <input
+                id="clientEmail"
+                name="email"
+                type="email"
+                maxlength="254"
+                autocomplete="email"
+                placeholder="example@mail.ru"
+                required
+            >
+            </div>
+
+            <div class="form-field">
+            <label for="clientFormat">Формат встречи</label>
+            <select id="clientFormat" name="format">
+                <option value="not_selected">Пока не определилась</option>
+                <option value="online">Онлайн</option>
+                <option value="offline">Очно</option>
+            </select>
+            </div>
+
+            <div class="form-field">
+            <label for="clientMessage">
+                Комментарий <span>(необязательно)</span>
+            </label>
+            <textarea
+                id="clientMessage"
+                name="message"
+                maxlength="500"
+                rows="3"
+                placeholder="Например, удобное время для связи"
+            ></textarea>
+            <small>
+                Пожалуйста, не отправляйте здесь
+                чувствительную личную информацию.
+            </small>
+            </div>
+
+            <div class="form-honeypot" aria-hidden="true">
+            <label for="companyWebsite">Сайт компании</label>
+            <input
+                id="companyWebsite"
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+            >
+            </div>
+
+            <label class="form-consent">
+            <input
+                id="clientConsent"
+                name="consent"
+                type="checkbox"
+                required
+            >
+            <span>
+                Я ознакомилась с
+                <a href="/privacy.html" target="_blank" rel="noopener">
+                политикой обработки персональных данных
+                </a>
+                и согласна на обработку данных
+                для ответа на обращение.
+            </span>
+            </label>
+
+            <button class="form-submit" type="submit">
+            <span>Отправить заявку</span>
+            <span>↗</span>
+            </button>
+
+            <div
+            class="form-message"
+            id="formMessage"
+            role="status"
+            aria-live="polite"
+            ></div>
+        </form>
+
+        </div>
+    </div>
+    </section>
+
+    
+
+<footer class="site-footer" id="contacts">
+  <div class="container">
+
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <a href="#top" class="site-footer__logo">
+          Точка опоры <span>✳</span>
+        </a>
+        <p>Пространство, где можно быть собой.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="#about">О специалисте</a>
+        <a href="#help">Направления</a>
+        <a href="#services">Услуги</a>
+        <a href="#appointment">Записаться</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© <span id="footerYear">2026</span> Точка опоры</span>
+
+      <a href="privacy.html">Политика конфиденциальности</a>
+
+      <div class="developer-credit">
+        <span>Дизайн и разработка</span>
+
+        <a
+            href="https://t.me/ia_hochy_obnimashek"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="developer-credit__link"
+        >
+            Homa <span>✳</span>
+        </a>
+        </div>
+
+  </div>
+</footer>
+
+
+
+  <script type="importmap">
+    {
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+    }
+    }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

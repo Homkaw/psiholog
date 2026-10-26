@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Политика конфиденциальности — Точка опоры</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FBF7F2;
+      --cream: #F2EAE2;
+      --lavender: #E8E0F0;
+      --accent: #9276A2;
+      --accent-dark: #765B89;
+      --text: #4A403C;
+      --muted: #807573;
+      --line: rgba(74,64,60,.12);
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Manrope", sans-serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(100% - 40px, 1240px); margin: auto; }
+    section[id] { scroll-margin-top: 105px; }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251,247,242,.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header__inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: -.04em;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: #766a72;
+      font-size: 13px;
+      font-weight: 700;
+      transition: color .3s;
+    }
+
+    .back-link:hover { color: var(--accent-dark); }
+    .back-link span { font-size: 22px; }
+
+    /* HERO */
+    .privacy-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 110px;
+      background: linear-gradient(135deg, #f6f0ed, #e7dced 75%, #e9d8e7);
+    }
+
+    .privacy-hero::after {
+      content: "✳";
+      position: absolute;
+      right: -60px;
+      top: -170px;
+      color: rgba(255,255,255,.35);
+      font-family: Georgia, serif;
+      font-size: 560px;
+      line-height: 1;
+      pointer-events: none;
+      animation: decorFloat 10s ease-in-out infinite;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 27px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .privacy-hero h1 {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+      margin: 0;
+      font-size: clamp(42px, 6.5vw, 87px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -.065em;
+      animation: fadeUp 1s var(--ease) both;
+    }
+
+    .privacy-hero h1 em {
+      display: block;
+      color: var(--accent-dark);
+      font-family: Georgia, serif;
+      font-weight: 400;
+    }
+
+    .privacy-hero__description {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      margin-top: 30px;
+      color: #716575;
+      font-size: 16px;
+      line-height: 1.9;
+      animation: fadeUp 1s .2s var(--ease) both;
+    }
+
+    .privacy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .privacy-meta span {
+      padding: 12px 17px;
+      border: 1px solid rgba(118,91,137,.12);
+      border-radius: 100px;
+      background: rgba(255,255,255,.6);
+      font-size: 12px;
+      color: #74637c;
+      font-weight: 700;
+    }
+
+    /* CONTENT */
+    .privacy-content { padding: 105px 0 130px; }
+
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0,1fr);
+      gap: clamp(45px, 7vw, 115px);
+      align-items: start;
+    }
+
+    .privacy-sidebar {
+      position: sticky;
+      top: 120px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fffdfa;
+    }
+
+    .privacy-sidebar__title {
+      display: block;
+      margin-bottom: 23px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #8a7595;
+    }
+
+    .privacy-sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .privacy-sidebar a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #887c80;
+      transition: background .25s, color .25s;
+    }
+
+    .privacy-sidebar a:hover,
+    .privacy-sidebar a.active {
+      background: var(--lavender);
+      color: var(--accent-dark);
+    }
+
+    .privacy-article { min-width: 0; }
+
+    .privacy-section {
+      padding: 0 0 45px;
+      margin-bottom: 45px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .privacy-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .section-number {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin-bottom: 15px;
+    }
+
+    .privacy-section h2 {
+      margin: 0 0 25px;
+      font-size: clamp(27px, 3.2vw, 42px);
+      font-weight: 600;
+      letter-spacing: -.045em;
+      line-height: 1.2;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #716765;
+    }
+
+    .privacy-section p { margin: 0 0 17px; }
+
+    .privacy-section ul {
+      padding-left: 22px;
+      margin: 18px 0 25px;
+    }
+
+    .privacy-section li {
+      padding-left: 5px;
+      margin-bottom: 9px;
+    }
+
+    .privacy-section strong { color: var(--text); }
+
+    .privacy-highlight {
+      padding: 28px 30px;
+      border-radius: 20px;
+      background: #eee5f2;
+      margin: 25px 0;
+    }
+
+    .privacy-highlight p {
+      margin: 0;
+      color: #65556d;
+    }
+
+    .contact-card {
+      padding: 32px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #e7d9ee, #f2e9e4);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      letter-spacing: -.04em;
+    }
+
+    .contact-card p { margin: 0 0 10px; }
+
+    .contact-card a {
+      color: #795b90;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .privacy-notice {
+      padding: 20px 25px;
+      margin: 20px 0;
+      border-left: 3px solid #ad96bc;
+      background: #f4edf3;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .privacy-notice p { margin: 0; font-size: 13px; }
+
+    /* BOTTOM */
+    .privacy-bottom {
+      padding: 75px 0;
+      background: #e5daec;
+      text-align: center;
+    }
+
+    .privacy-bottom h2 {
+      margin: 0 auto 20px;
+      max-width: 660px;
+      font-size: clamp(32px, 4vw, 55px);
+      letter-spacing: -.06em;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+
+    .privacy-bottom h2 em {
+      font-family: Georgia, serif;
+      color: #896b9b;
+      font-weight: 400;
+    }
+
+    .privacy-bottom p {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #77687c;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      min-height: 54px;
+      padding: 0 25px;
+      background: #4a403c;
+      color: white;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background .3s, transform .3s;
+    }
+
+    .button:hover {
+      background: #765d7f;
+      transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 30px 0;
+      background: #433b3e;
+      color: #c5bbc0;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .footer a:hover { color: #fff; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes decorFloat {
+      0%,100% { transform: rotate(-8deg) translateY(0); }
+      50% { transform: rotate(3deg) translateY(20px); }
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-ready .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
+
+    .motion-ready .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .privacy-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .privacy-sidebar {
+        position: static;
+      }
+
+      .privacy-sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, 1240px); }
+      .header__inner { min-height: 72px; }
+      .logo { font-size: 18px; }
+      .back-link { font-size: 11px; gap: 6px; }
+      .privacy-hero { padding: 75px 0 90px; }
+      .privacy-hero h1 { font-size: 43px; }
+      .privacy-hero::after {
+        font-size: 340px;
+        top: -75px;
+        right: -160px;
+      }
+
+      .privacy-content { padding: 60px 0 80px; }
+      .privacy-sidebar { padding: 18px; }
+      .privacy-sidebar nav { grid-template-columns: 1fr; }
+      .privacy-section { padding-bottom: 35px; margin-bottom: 35px; }
+      .privacy-section h2 { font-size: 29px; }
+      .privacy-highlight { padding: 22px; }
+      .contact-card { padding: 24px; }
+      .privacy-bottom { padding: 65px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .motion-ready .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Точка опоры <span>✳</span></a>
+      <a href="index.html" class="back-link">
+        <span>←</span> Вернуться на сайт
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="privacy-hero">
+      <div class="container">
+        <span class="eyebrow">Забота о вашей конфиденциальности</span>
+        <h1>Ваше доверие <em>имеет значение.</em></h1>
+        <p class="privacy-hero__description">
+          Здесь рассказываем, какие персональные данные могут
+          собираться при обращении через сайт, для чего они
+          нужны и какие права есть у посетителей.
+        </p>
+        <div class="privacy-meta">
+          <span>Политика обработки персональных данных</span>
+          <span>Редакция от [указать дату утверждения]</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-content">
+      <div class="container privacy-layout">
+
+        <aside class="privacy-sidebar">
+          <span class="privacy-sidebar__title">Содержание документа</span>
+          <nav aria-label="Разделы политики">
+            <a href="#general">01. Общие положения</a>
+            <a href="#operator">02. Оператор данных</a>
+            <a href="#data">03. Какие данные собираем</a>
+            <a href="#purpose">04. Цели обработки</a>
+            <a href="#legal">05. Правовые основания</a>
+            <a href="#processing">06. Обработка и передача</a>
+            <a href="#storage">07. Хранение и защита</a>
+            <a href="#rights">08. Ваши права</a>
+            <a href="#cookies">09. Cookies и технологии</a>
+            <a href="#changes">10. Изменение политики</a>
+            <a href="#contacts">11. Контакты</a>
+          </nav>
+        </aside>
+
+        <article class="privacy-article">
+
+          <section class="privacy-section reveal" id="general">
+            <span class="section-number">РАЗДЕЛ 01</span>
+            <h2>Общие положения</h2>
+            <p>
+              Настоящая Политика обработки персональных данных
+              (далее — Политика) описывает порядок обработки
+              и защиты персональных данных посетителей сайта
+              «Точка опоры» (далее — Сайт).
+            </p>
+            <p>
+              Политика применяется к сведениям, которые
+              посетитель добровольно предоставляет через
+              форму записи на консультацию, а также к
+              техническим данным, если их обработка
+              осуществляется при использовании Сайта.
+            </p>
+            <p>
+              Обработка персональных данных осуществляется
+              в соответствии с применимыми требованиями
+              законодательства Российской Федерации,
+              включая Федеральный закон № 152-ФЗ
+              «О персональных данных».
+            </p>
+            <div class="privacy-highlight">
+              <p>
+                Мы стремимся запрашивать только те сведения,
+                которые необходимы для ответа на обращение
+                и организации консультации.
+              </p>
+            </div>
+          </section>
+
+          <section class="privacy-section reveal" id="operator">
+            <span class="section-number">РАЗДЕЛ 02</span>
+            <h2>Оператор персональных данных</h2>
+            <p>
+              Оператором является лицо, определяющее цели,
+              состав и способы обработки персональных
+              данных на Сайте.
+            </p>
+            <ul>
+              <li><strong>ФИО или наименование:</strong> [указать]</li>
+              <li><strong>Адрес оператора:</strong> [указать]</li>
+              <li><strong>Email для обращений:</strong> [указать]</li>
+              <li><strong>Адрес сайта:</strong> [указать домен]</li>
+            </ul>
+            <p>
+              Оператор отвечает за организацию обработки
+              данных в пределах своей деятельности и
+              рассматривает обращения, связанные с
+              персональными данными.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="data">
+            <span class="section-number">РАЗДЕЛ 03</span>
+            <h2>Какие данные могут обрабатываться</h2>
+            <p>
+              При заполнении формы записи посетитель
+              может предоставить:
+            </p>
+            <ul>
+              <li>имя или выбранную форму обращения;</li>
+              <li>адрес электронной почты;</li>
+              <li>предпочитаемый формат консультации;</li>
+              <li>необязательный комментарий, например удобное время для связи;</li>
+              <li>сведения о предоставленном согласии на обработку данных.</li>
+            </ul>
+            <p>
+              При работе Сайта также могут обрабатываться
+              технические сведения, такие как IP-адрес,
+              время обращения, сведения о браузере
+              и технические журналы сервера, если
+              соответствующее логирование включено.
+            </p>
+            <div class="privacy-notice">
+              <p>
+                Пожалуйста, не указывайте в форме записи
+                сведения о диагнозах, состоянии здоровья,
+                интимной жизни и другую чувствительную
+                информацию. Если такие сведения
+                всё же поступают, порядок их обработки
+                должен соответствовать специальным
+                требованиям законодательства.
+              </p>
+            </div>
+          </section>
+
+          <section class="privacy-section reveal" id="purpose">
+            <span class="section-number">РАЗДЕЛ 04</span>
+            <h2>Цели обработки данных</h2>
+            <p>Предоставленные сведения используются для:</p>
+            <ul>
+              <li>получения и рассмотрения обращения;</li>
+              <li>связи с посетителем по указанному email;</li>
+              <li>обсуждения возможности проведения консультации;</li>
+              <li>согласования формата, даты и времени встречи;</li>
+              <li>исполнения предусмотренных законом обязанностей, если применимо;</li>
+              <li>обеспечения технической безопасности Сайта.</li>
+            </ul>
+            <p>
+              Данные из формы записи не предназначены
+              для рекламных рассылок. Если такие рассылки
+              будут добавлены, для них потребуется
+              отдельное правовое основание и соответствующее
+              информирование посетителей.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="legal">
+            <span class="section-number">РАЗДЕЛ 05</span>
+            <h2>Правовые основания обработки</h2>
+            <p>
+              Основаниями обработки персональных данных
+              в зависимости от конкретной цели могут
+              выступать:
+            </p>
+            <ul>
+              <li>согласие субъекта персональных данных, предоставленное установленным способом;</li>
+              <li>необходимость совершения действий по инициативе посетителя до заключения договора либо исполнения договора;</li>
+              <li>исполнение обязанностей оператора, предусмотренных законодательством.</li>
+            </ul>
+            <p>
+              Применимость каждого основания определяется
+              фактическим процессом обработки.
+              Согласие на обработку персональных данных,
+              когда оно требуется, оформляется отдельно
+              от иных подтверждений и документов.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="processing">
+            <span class="section-number">РАЗДЕЛ 06</span>
+            <h2>Порядок обработки и передачи</h2>
+            <p>
+              Обработка может включать получение, запись,
+              систематизацию, хранение, использование,
+              уточнение, блокирование и удаление данных
+              в объёме, необходимом для заявленных целей.
+            </p>
+            <p>
+              Доступ к персональным данным должен
+              предоставляться только лицам, которым
+              он необходим для обработки обращений.
+            </p>
+            <p>
+              Для технической работы Сайта могут
+              привлекаться поставщики хостинга,
+              электронной почты и других сервисов.
+              Перечень таких поставщиков, их роль
+              и местонахождение должны быть определены
+              оператором до публикации Политики.
+            </p>
+            <p>
+              Передача данных третьим лицам допускается
+              при наличии соответствующего правового
+              основания и с соблюдением применимых
+              требований законодательства.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="storage">
+            <span class="section-number">РАЗДЕЛ 07</span>
+            <h2>Хранение и защита данных</h2>
+            <p>
+              Персональные данные должны храниться
+              не дольше, чем это необходимо для
+              заявленных целей обработки, если иной
+              срок не установлен законодательством.
+            </p>
+            <p>
+              Для заявок, не перешедших в консультации,
+              оператор устанавливает срок хранения:
+              <strong>[указать конкретный срок]</strong>.
+            </p>
+            <p>
+              Для защиты данных оператор определяет
+              необходимые организационные и технические
+              меры с учётом используемых систем,
+              характера данных и актуальных рисков.
+            </p>
+            <p>
+              По достижении целей обработки либо
+              при наступлении иных законных оснований
+              данные подлежат удалению или уничтожению
+              в установленном порядке.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="rights">
+            <span class="section-number">РАЗДЕЛ 08</span>
+            <h2>Права посетителя</h2>
+            <p>
+              В пределах, установленных законодательством,
+              субъект персональных данных вправе:
+            </p>
+            <ul>
+              <li>получать информацию об обработке своих персональных данных;</li>
+              <li>запрашивать уточнение неточных или неполных данных;</li>
+              <li>требовать блокирования или удаления данных при наличии законных оснований;</li>
+              <li>отзывать ранее предоставленное согласие;</li>
+              <li>обжаловать неправомерную обработку данных в уполномоченный орган или суд.</li>
+            </ul>
+            <p>
+              Для направления обращения можно использовать
+              контактный email оператора, указанный
+              в разделе «Контакты».
+            </p>
+            <p>
+              Отзыв согласия не всегда исключает дальнейшую
+              обработку, если для неё существуют
+              самостоятельные законные основания.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="cookies">
+            <span class="section-number">РАЗДЕЛ 09</span>
+            <h2>Cookies и технические технологии</h2>
+            <p>
+              Сайт может использовать технические
+              механизмы, необходимые для его работы,
+              безопасности и отображения интерфейса.
+            </p>
+            <p>
+              Использование cookies, аналитических
+              инструментов и сторонних ресурсов
+              должно быть отражено здесь в соответствии
+              с фактическими настройками Сайта.
+            </p>
+            <p>
+              Если будут подключены аналитика,
+              сторонние виджеты или дополнительные
+              сервисы, Политика должна быть обновлена
+              до начала соответствующей обработки.
+            </p>
+            <div class="privacy-notice">
+              <p>
+                Требует уточнения: перечень cookies,
+                используемый хостинг, внешние шрифты
+                и другие сторонние запросы.
+              </p>
+            </div>
+          </section>
+
+          <section class="privacy-section reveal" id="changes">
+            <span class="section-number">РАЗДЕЛ 10</span>
+            <h2>Изменение политики</h2>
+            <p>
+              Политика может пересматриваться при
+              изменении законодательства, используемых
+              сервисов или процессов обработки данных.
+            </p>
+            <p>
+              Актуальная редакция размещается на
+              этой странице. Дата утверждения редакции
+              указывается в начале документа.
+            </p>
+          </section>
+
+          <section class="privacy-section reveal" id="contacts">
+            <span class="section-number">РАЗДЕЛ 11</span>
+            <h2>Контакты по вопросам обработки данных</h2>
+            <p>
+              По вопросам обработки персональных данных,
+              уточнения или отзыва согласия можно
+              обратиться непосредственно к оператору.
+            </p>
+
+            <div class="contact-card">
+              <h3>Связаться с оператором</h3>
+              <p><strong>Оператор:</strong> [ФИО / организация]</p>
+              <p><strong>Email:</strong> [контактный email]</p>
+              <p><strong>Почтовый адрес:</strong> [адрес]</p>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="privacy-bottom">
+      <div class="container">
+        <h2>Забота начинается <em>с уважения.</em></h2>
+        <p>
+          Спасибо, что уделили время знакомству
+          с информацией об обработке персональных данных.
+        </p>
+        <a class="button" href="index.html">
+          ← Вернуться на главную
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Точка опоры</span>
+      <a href="index.html">На главную</a>
+      <span>С уважением к вашей приватности ✳</span>
+    </div>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll(".reveal");
+    const links = document.querySelectorAll(".privacy-sidebar a");
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reducedMotion && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .08 });
+
+      sections.forEach(section => observer.observe(section));
+      document.documentElement.classList.add("motion-ready");
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < innerHeight && rect.bottom > 0) {
+          section.classList.add("visible");
+        }
+      });
+    }
+
+    function updateActiveSection() {
+      let activeId = "general";
+
+      document.querySelectorAll(".privacy-section").forEach(section => {
+        if (section.getBoundingClientRect().top <= 180) {
+          activeId = section.id;
+        }
+      });
+
+      links.forEach(link => {
+        const active = link.getAttribute("href") === "#" + activeId;
+        link.classList.toggle("active", active);
+
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }
+
+    addEventListener("scroll", updateActiveSection, { passive: true });
+    updateActiveSection();
+  </script>
+</body>
+</html>
